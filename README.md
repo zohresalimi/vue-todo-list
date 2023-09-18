@@ -1,68 +1,91 @@
-# vue-todo-list
+# To-Do List
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a Vue.js Single Page Application (SPA) for managing to-do list in the Star Wars universe. It allows you to add, delete, and mark items as done. Additionally, it provides autocomplete suggestions for Star Wars characters and their home planets using data from swapi.dev.
 
-## Recommended IDE Setup
+## Table of Contents
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [Demo](#demo)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Usage](#usage)
+- [Local Development](#local-development)
+- [Technologies Used](#technologies-used)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Type Support for `.vue` Imports in TS
+## Demo
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+[![Live Demo](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Vercel_logo_black.svg/1024px-Vercel_logo_black.svg.png)](https://your-live-demo-url-here.com)
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## Getting Started
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+### Prerequisites
 
-## Customize configuration
+Before you begin, ensure you have met the following requirements:
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your machine.
 
-## Project Setup
+### Installation
 
-```sh
-npm install
-```
+1. Clone the repository:
 
-### Compile and Hot-Reload for Development
+   ```sh
+   git clone <repository-url>
 
-```sh
-npm run dev
-```
+   ```
 
-### Type-Check, Compile and Minify for Production
+2. Change to the project directory:
 
-```sh
-npm run build
-```
+   ```sh
+   cd <project-directory>
+   ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+3. Install dependencies:
 
-```sh
-npm run test:unit
-```
+   ```sh
+   npm install
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
 
-```sh
-npm run test:e2e:dev
-```
+   cd <your-project-name>
+   npm install
+   npm run dev
+   ```
 
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
+## Features
 
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
+- The to-do list is saved in LocalStorage, ensuring that the list is persisted even after a page refresh.
+- You can add items to the list using the input field and the "Add" button.
+- Autocomplete suggestions for Star Wars characters and their home planets are available when typing "@" followed by at least one character.
+- Items can be deleted using the trashcan icon button.
+- Items can be marked as done by checking a checkbox.
 
-```sh
-npm run build
-npm run test:e2e
-```
+## Usage
 
-### Lint with [ESLint](https://eslint.org/)
+#### Start the Application:
 
-```sh
-npm run lint
-```
+###### To launch the development server and run the application locally, use the following command:
+
+    npm run dev
+
+Open your browser and navigate to http://localhost:5173 to access the application.
+
+#### Local Development
+
+##### For local development, you can use the following npm scripts:
+
+    npm run dev: Start the development server.
+    npm run test:unit: Run unit tests.
+
+### Technologies Used
+
+#### This project employs a stack of modern technologies, including:
+
+- Vue.js 3
+- Vite (Build tool)
+- SWAPI (Star Wars API)
+- TypeScript
+- ESLint (Code linting)
+- Other dependencies (listed in package.json)
