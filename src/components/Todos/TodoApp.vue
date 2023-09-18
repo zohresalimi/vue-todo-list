@@ -59,7 +59,7 @@ const changeTodoStatus = (todoId: number) => {
             <TodoInput @addTodo="addTodo" />
 
             <div v-if="todos.length"
-                class="box-container border border-sky-500 shadow-sm rounded-2xl divide-y mt-14">
+                class="box-container border border-gray-200 shadow-lg rounded-lg divide-y mt-8">
                 
                 <TodoItem v-for="todo in todos" :key="todo.id" :todo="todo" @removeTodo="removeTodo" @updateStatus="changeTodoStatus" />
             </div>

@@ -1,7 +1,7 @@
 <template>
     <div class="todo-list flex justify-center items-center p-3">
         <p class="todo-item flex-1"
-            :class="{'line-through':todo.done}"> {{ todo.content }}</p>
+            :class="{'line-through text-gray-400': todo.done}"> {{ todo.content }}</p>
 
         <input type="checkbox" class="w-6 h-6 border rounded-full cursor-pointer border-sky-600 text-sky-600 mr-2 focus:ring-0 focus:ring-offset-0 focus:shadow-none"
             v-model="todoStatus">

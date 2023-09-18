@@ -4,9 +4,7 @@ function useDebounce<T extends (...args: any[]) => void>(fn: T, delay: number) {
   let timeout: ReturnType<typeof setTimeout> | null = null;
 
   const debounced = (...args: Parameters<T>) => {
-    console.log('object :>> ', args);
     if (timeout !== null) {
-      console.log('object :>> ', timeout);
       clearTimeout(timeout);
     }
 
