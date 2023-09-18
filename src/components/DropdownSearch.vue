@@ -1,8 +1,10 @@
 <template>
     <div class="relative" v-if="searchTerm">
-        <div class="absolute w-full overflow-hidden -top-1">
-            <div v-if="searchResult.data?.results?.length" class="border bg-white border-sky-300 border">
-                <ul class="divide-y">
+        <div class="absolute w-full overflow-hidden -top-2 shadow-lg overflow-hidden rounded-b-lg">
+            <div v-if="searchResult.data?.results?.length" 
+                class="bg-white border-sky-300 border border-t-0 flex flex-col items-center">
+                <div class="w-11/12 border-t"></div>
+                <ul class="divide-y flex-1 w-full">
                     <li 
                         class="h-8 flex items-center px-5 py-5 pr-2 cursor-pointer 
                             flex justify-between items-center
@@ -138,10 +140,14 @@ const { debounced: debouncedSearch } = useDebounce(searchCharacters, 500)
 
 watch(
     () => props.searchTerm, 
-    (updatedTerm, oldTerm) => {
+    (updatedTerm, oldTerm, onCleanup) => {
         if(updatedTerm !== oldTerm){
             debouncedSearch(updatedTerm)
         }
+
+        onCleanup(() => {
+            searchResult.data = {}
+        })
     }
 )
 

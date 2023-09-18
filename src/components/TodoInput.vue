@@ -3,7 +3,7 @@
         <input class="search-input placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-sky-300 
             rounded-lg rounded-r-none
             focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 
-            sm:text-sm h-12"
+            sm:text-sm h-14"
             placeholder="Search for your Star Wars character ..." 
             type="text" 
             name="search"
@@ -11,7 +11,7 @@
             ref="searchQuery"
             v-model="todoContent" />
         <button type="submit" class="add-action rounded-r-lg bg-white 
-            border border-l-0 h-12 border-sky-300
+            border border-l-0 h-14 border-sky-300
             px-5 transition-all
             hover:text-white hover:bg-blue-500">Add</button>
     </form>
