@@ -126,8 +126,6 @@ const searchCharacters = async (searchTerm: string) => {
         const response = await fetch(`https://swapi.dev/api/people/?search=${searchTerm}`)
             .then(response => response.json())
         searchResult.data = response;
-        console.log('----DropdownSearch.vue--98---------', {res: searchResult.data});// fixme
-
     } catch(error: any) {
         console.log('Error occured while fetching people', searchTerm, error)
     } finally {

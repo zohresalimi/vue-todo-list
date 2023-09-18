@@ -9,13 +9,11 @@ function useDebounce<T extends (...args: any[]) => void>(fn: T, delay: number) {
     }
 
     timeout = setTimeout(() => {
-      console.log('calling')
       fn(...args);
     }, delay);
   };
 
   const cancel = () => {
-    console.log('cancelling', timeout)
     if (timeout !== null) {
       clearTimeout(timeout);
       timeout = null;
