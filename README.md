@@ -1,5 +1,15 @@
 # To-Do List
 
+## Links
+Deployment 
+
+![Vercel](https://vercelbadge.vercel.app/api/zohresalimi/vue-todo-list)
+
+Demo: 
+
+[See demo here](https://vue-todo-list-ghus.vercel.app/)
+
+## Story
 This is a Vue.js Single Page Application (SPA) for managing to-do list in the Star Wars universe. It allows you to add, delete, and mark items as done. Additionally, it provides autocomplete suggestions for Star Wars characters and their home planets using data from swapi.dev.
 
 ## Table of Contents
@@ -15,14 +25,6 @@ This is a Vue.js Single Page Application (SPA) for managing to-do list in the St
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
 - [License](#license)
-
-## Deployment
-
-![Vercel](https://vercelbadge.vercel.app/api/zohresalimi/vue-todo-list)
-
-## Demo
-
-[See demo here](https://vue-todo-list-ghus.vercel.app/)
 
 ## Getting Started
 
