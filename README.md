@@ -33,25 +33,20 @@ Before you begin, ensure you have met the following requirements:
 1. Clone the repository:
 
    ```sh
-   git clone <repository-url>
+   git clone https://github.com/zohresalimi/vue-todo-list.git
 
    ```
 
 2. Change to the project directory:
 
    ```sh
-   cd <project-directory>
+   cd vue-todo-list
    ```
 
 3. Install dependencies:
 
    ```sh
    npm install
-
-
-   cd <your-project-name>
-   npm install
-   npm run dev
    ```
 
 ## Features
@@ -76,8 +71,8 @@ Open your browser and navigate to http://localhost:5173 to access the applicatio
 
 ##### For local development, you can use the following npm scripts:
 
-    npm run dev: Start the development server.
-    npm run test:unit: Run unit tests.
+    npm run dev ---> Start the development server.
+    npm run test:unit ---> Run unit tests.
 
 ### Technologies Used
 

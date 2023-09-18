@@ -12,25 +12,24 @@ describe('TodoInput.vue', () => {
     const input = wrapper.find('input[type="text"]')
     await input.setValue('Test todo')
     await wrapper.find('form').trigger('submit.prevent')
-    expect(wrapper.emitted('addTodo')).toBeTruthy()
-    expect(wrapper.emitted('addTodo')[0]).toEqual(['Test todo'])
+    expect(wrapper?.emitted('addTodo')).toBeTruthy()
+    expect(wrapper?.emitted('addTodo')?.[0]).toEqual(['Test todo'])
   })
 
   it('updates todoContent when input value changes', async () => {
     const wrapper = mount(TodoInput)
     const input = wrapper.find('input[type="text"]')
     await input.setValue('Test todo')
-    expect(wrapper.vm.todoContent).toBe('Test todo')
+    expect((wrapper.vm as unknown as { todoContent: string })?.todoContent).toBe('Test todo')
   })
 
   it('handles item selection from DropdownSearch', async () => {
     const wrapper = mount(TodoInput)
-    const input = wrapper.find('input[type="text"]')
-    await input.setValue('Call @lu')
+    const input = wrapper.find('input[type="text"]');
+    await input.setValue('Call @lu');
 
-    const charName = 'Luke Skywalker'
-    wrapper.vm.handleItemSelect(charName)
-    expect(wrapper.vm.todoContent).toContain(`Call ${charName}`)
+    (wrapper.vm as unknown as { handleItemSelect: (a?: string) => void }).handleItemSelect('Luke Skywalker')
+    expect((wrapper.vm as unknown as { todoContent: string }).todoContent).toContain(`Call Luke Skywalker`)
   })
 
   it('computes the searchTerm correctly', async () => {
@@ -39,10 +38,10 @@ describe('TodoInput.vue', () => {
     
     // Test case 1: No search term
     await input.setValue('Test todo')
-    expect(wrapper.vm.searchTerm).toBe('')
+    expect((wrapper.vm as unknown as { searchTerm: string }).searchTerm).toBe('')
 
     // Test case 2: Search term present
     await input.setValue('Test @search')
-    expect(wrapper.vm.searchTerm).toBe('search')
+    expect((wrapper.vm as unknown as { searchTerm: string }).searchTerm).toBe('search')
   })
 })
