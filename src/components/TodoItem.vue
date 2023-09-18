@@ -17,20 +17,26 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 
+// Define props and emit functions
 const props = defineProps(['todo'])
-
 const emit = defineEmits(['removeTodo', 'updateStatus'])
 
+// Function to emit the removeTodo event when the delete button is clicked
 const emitItemRemove = () => {
     emit('removeTodo', props.todo.id)
 }
 
+// Computed property to handle the todo status (done or not done)
 const todoStatus = computed({
     get() {
         return props.todo.done
     },
 
     set() {
+        /**
+         * Emit the updateStatus event when the checkbox value changes
+         * notifies parent component to change the todo status
+         */
         emit('updateStatus', props.todo.id)
     }
 })

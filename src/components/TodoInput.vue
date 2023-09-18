@@ -23,16 +23,20 @@
 import { computed, ref } from "vue"
 import DropdownSearch from '@/components/DropdownSearch.vue'
 
+// Refs for DOM elements and data
 const searchQuery = ref<HTMLInputElement>()
 const todoContent = ref('')
 
+// Emit setup for custom event
 const emit = defineEmits(['addTodo'])
 
+// Function to handle adding a todo
 const addTodo = () => {
     emit('addTodo', todoContent.value)
     todoContent.value = ''
 }
 
+// Function to handle item selection from the DropdownSearch component
 const handleItemSelect = (charName:string) => {
     const inputContent = todoContent.value.split(' ')
     const wordsList = inputContent.map(word => {
@@ -43,6 +47,7 @@ const handleItemSelect = (charName:string) => {
     searchQuery.value?.focus()
 }
 
+// Computed property for extracting the search term from input content
 const searchTerm = computed(() => {
     const inputContent = todoContent.value.split(' ')
     const searchToken = inputContent.find(word => word.startsWith('@') && word.length >= 2)

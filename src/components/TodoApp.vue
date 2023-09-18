@@ -3,27 +3,37 @@ import { ref, onMounted, watch } from "vue"
 import TodoInput from "./TodoInput.vue";
 import TodoItem from "./TodoItem.vue";
 
+// Define the TodoType interface
 type TodoType = {
     content: string,
     done: boolean,
     id: number
 }
 
+// Create a ref for the todos array
 const todos = ref<TodoType[]>([])
 
+// Create a ref for the search input element
 const searchQuery = ref<HTMLInputElement>();
 
+/**
+ * Lifecycle hook: 
+ *  1. Focus on the search input when the component is mounted
+ *  2. Get initial todo list from localStorage
+ */
 onMounted(() => {
     searchQuery?.value?.focus()
     todos.value = JSON.parse(localStorage.getItem('todos') || '[]')
 })
 
+// Watch for changes in the todos array and save it to localStorage
 watch(todos, (updatedTotos) => {
     localStorage.setItem('todos', JSON.stringify(updatedTotos))
 }, {
     deep: true
 })
 
+// Function to add a new todo to the todos array
 const addTodo = (content: string) =>{
     if(content.trim() === '') return
     todos.value.push({
@@ -33,10 +43,12 @@ const addTodo = (content: string) =>{
     })
 }
 
+// Function to remove a todo by its ID
 const removeTodo = (todoId: number) => {
 	todos.value = todos.value.filter((t) => t.id !== todoId)
 }
 
+// Function to change the status (done or not done) of a todo by its ID
 const changeTodoStatus = (todoId: number) => {
     todos.value = todos.value.map(todo => {
         if(todo.id === todoId) {
@@ -68,9 +80,6 @@ const changeTodoStatus = (todoId: number) => {
 </template>
 
 <style scoped>
-
-
-
 .title-typing {
   width: 11ch;
   font-size: 25px;

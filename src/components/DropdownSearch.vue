@@ -62,6 +62,29 @@ const emitHandleItemSelect = (item: string) => {
     emit('itemSelected', item)
 }
 
+/**
+ * Function to load planet data from SWAPI
+ * 
+ * This function fetches the list of all planets once 
+ * the app has run on user's browser for the first time
+ * and stores it in the localStorage for later use
+ * 
+ * The reason for this approach is that I assumed the 
+ * list of planets is something that doesn't change over
+ * long times, and it doesn't make sense fetching it again
+ * 
+ * The other reason for that is I didn't want to fetch planet
+ * name for each character individually to avoid network call 
+ * overload. 
+ * 
+ * I also created a cusom data structure from the api response, 
+ * and created a Map of key/value pairs where `key` is the 
+ * planet's url and the value is the original planet object,
+ * to make it easier to access later from the template when 
+ * I am rendering the planet name in front of the character name
+ * 
+ * This can probably be improved later
+ */
 const loadplanets = async () => {
     let planetsList: any[] = []
 
