@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Todos from './components/Todos/TodoApp.vue'
+import Todos from './components/TodoApp.vue'
 
 </script>
 
@@ -10,9 +10,3 @@ import Todos from './components/Todos/TodoApp.vue'
     </div>
   </main>
 </template>
-
-<style scoped>
-.app-wrapper{
-
-}
-</style>

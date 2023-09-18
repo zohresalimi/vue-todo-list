@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, watch } from "vue"
-import TodoInput from "../TodoInput.vue";
-import TodoItem from "../TodoItem.vue";
+import TodoInput from "./TodoInput.vue";
+import TodoItem from "./TodoItem.vue";
 
 type TodoType = {
     content: string,
