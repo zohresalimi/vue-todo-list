@@ -16,9 +16,13 @@ This is a Vue.js Single Page Application (SPA) for managing to-do list in the St
 - [Contributing](#contributing)
 - [License](#license)
 
+## Deployment
+
+![Vercel](https://vercelbadge.vercel.app/api/zohresalimi/vue-todo-list)
+
 ## Demo
 
-[![Live Demo](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Vercel_logo_black.svg/1024px-Vercel_logo_black.svg.png)](https://your-live-demo-url-here.com)
+![See demo here](https://vue-todo-list-ghus.vercel.app/)
 
 ## Getting Started
 
