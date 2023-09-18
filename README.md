@@ -22,7 +22,7 @@ This is a Vue.js Single Page Application (SPA) for managing to-do list in the St
 
 ## Demo
 
-![See demo here](https://vue-todo-list-ghus.vercel.app/)
+[See demo here](https://vue-todo-list-ghus.vercel.app/)
 
 ## Getting Started
 
